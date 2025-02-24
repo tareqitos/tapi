@@ -1,0 +1,11 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.button {
+    @include button;
+}
+
+.title {
+    @include link-properties;
+    font-family: $font-pacifico;
+}

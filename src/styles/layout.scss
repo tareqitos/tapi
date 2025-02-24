@@ -1,14 +1,32 @@
 @use 'variables' as *;
-@use 'reset' as *; 
-@use 'mixins' as *; 
+@use 'reset' as *;
+@use 'mixins' as *;
 
-.content {
+#content {
     padding: $auto-padding-50;
+    min-height: calc(100vh - 130px);
 }
 
 // HEADER =================================================
 
-header {
-    @include flex-row(space-between);
+header, footer {
     padding: $auto-padding-10;
+}
+
+header {
+    @include flex-row-center(space-between);
+    border-bottom: 1px solid transparent;
+    border-color: var(--primary-color);
+
+    .title {
+        font-size: 2em;
+    }
+}
+
+// FOOTER =================================================
+
+footer {
+    @include flex-row-center(space-between);
+    border-top: 1px solid transparent;
+    border-color: var(--primary-color);
 }

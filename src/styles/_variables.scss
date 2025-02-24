@@ -1,5 +1,15 @@
+@use 'fonts' as *;
 @use 'colors' as *;
+@use 'mixins' as *;
+
+// FONTS
+
+$font-pacifico: 'Pacifico', cursive;
+$font-poppins: 'Poppins', sans-serif;
+
+// PADDING
 
 $contentWidth: 1200px;
 $auto-padding-10: 10px max(2rem, 50vw - $contentWidth / 2);
 $auto-padding-50: 50px max(2rem, 50vw - $contentWidth / 2);
+$auto-padding-100: 100px max(2rem, 50vw - $contentWidth / 2);

@@ -24,6 +24,15 @@
     align-items: center;
 }
 
+// GRID
+
+@mixin grid ($columns: 2, $gap: 16px) {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat($columns, .4fr);
+    gap: $gap;
+}
+
 
 // CENTER
 
@@ -49,4 +58,30 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+
+// BUTTON
+
+@mixin button ($primary-color: var(--primary-color), $primary-color-hover: var(--primary-color-hover)) {
+    display: inline-block;
+    width: max-content;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover {
+        background-color: $primary-color-hover;
+    }
+}
+
+@mixin link-properties ($color: var(--primary-color), $hover-color: var(--primary-color-hover)) {
+    color: $color;
+    text-decoration: none;
+    transition: color 0.3s;
+    &:hover {
+        color: $hover-color;
+    }
 }
