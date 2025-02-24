@@ -1,0 +1,5 @@
+@use 'colors' as *;
+
+$contentWidth: 1200px;
+$auto-padding-10: 10px max(2rem, 50vw - $contentWidth / 2);
+$auto-padding-50: 50px max(2rem, 50vw - $contentWidth / 2);

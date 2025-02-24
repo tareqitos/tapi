@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use 'reset' as *; 
+@use 'mixins' as *; 
+
+.content {
+    padding: $auto-padding-50;
+}
+
+// HEADER =================================================
+
+header {
+    @include flex-row(space-between);
+    padding: $auto-padding-10;
+}
