@@ -1,1 +1,88 @@
-/*# sourceMappingURL=home.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary-color: #e67761;
+  --primary-color-hover: #de573c;
+}
+
+html[data-theme=light] {
+  --text-color: #4B4B4B;
+  --background-color: #fff;
+}
+
+html[data-theme=dark] {
+  --text-color: #fff;
+  --background-color: #333;
+}
+
+@keyframes sine {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
+.homepage-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 0.4fr);
+  gap: 20px;
+  align-items: center;
+  margin-top: 100px;
+}
+.homepage-container .left-side {
+  text-align: center;
+  position: relative;
+}
+.homepage-container .left-side .mascot-wrapper {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.homepage-container .left-side .mascot-wrapper:hover {
+  transform: rotate(10deg);
+}
+.homepage-container .left-side .mascot {
+  animation: sine 5s ease-in-out infinite;
+}
+.homepage-container .left-side span {
+  content: "";
+  display: block;
+  width: 300px;
+  height: 100px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  margin: auto;
+  z-index: -1;
+}
+.homepage-container .right-side {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.8;
+  gap: 40px;
+}
+.homepage-container .right-side p {
+  font-size: 1.2em;
+}
+.homepage-container .right-side .lets-go {
+  font-size: 1.2em;
+}
+
+.title {
+  font-size: 1.2em;
+}/*# sourceMappingURL=home.css.map */
