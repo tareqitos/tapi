@@ -1,6 +1,6 @@
 // FLEXBOX MIXINS
 
-@mixin flex-row ($justify-content: 'inherit'){
+@mixin flex-row ($justify-content: 'inherit') {
     display: flex;
     flex-direction: row;
     justify-content: $justify-content;
@@ -28,7 +28,6 @@
 
 @mixin grid ($columns: 2, $gap: 16px) {
     display: grid;
-    justify-content: center;
     grid-template-columns: repeat($columns, .4fr);
     gap: $gap;
 }
@@ -71,8 +70,10 @@
     background-color: $primary-color;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.1s;
+
     &:hover {
+        transform: translateY(-3px);
         background-color: $primary-color-hover;
     }
 }
@@ -81,6 +82,7 @@
     color: $color;
     text-decoration: none;
     transition: color 0.3s;
+
     &:hover {
         color: $hover-color;
     }

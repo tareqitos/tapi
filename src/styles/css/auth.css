@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary-color: #e67761;
+  --primary-color-hover: #de573c;
+  --primary-color-opacity: #e6776180;
+  --warning-color: #f91919;
+}
+
+html[data-theme=light] {
+  --text-color: #4B4B4B;
+  --background-color: #fff;
+}
+
+html[data-theme=dark] {
+  --text-color: #fff;
+  --background-color: #333;
+}
+
+.form-container {
+  padding: 50px 40px;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 10px 40px var(--primary-color-opacity);
+  background-color: var(--background-color);
+}
+.form-container .user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 200px;
+}
+.form-container h1 {
+  line-height: 1;
+}
+.form-container .fields-container {
+  display: grid;
+  grid-template-columns: repeat(2, 0.4fr);
+  gap: 16px;
+}
+.form-container .field {
+  display: flex;
+  flex-direction: column;
+}
+.form-container .field label {
+  font-size: 0.9rem;
+}
+.form-container .field a {
+  font-size: 0.8rem;
+  text-align: right;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+.form-container input {
+  padding: 5px;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+}
+
+.register-login-success {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-items: end;
+  gap: 10px;
+}
+
+.form-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  cursor: unset;
+  z-index: 499;
+  background-color: var(--background-color);
+}
+
+.form-container-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+  position: absolute;
+}
+
+.fields-container-login {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.warning-messages {
+  position: relative;
+  bottom: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.warning-messages.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 0;
+  top: 10px;
+}
+.warning-messages .warning {
+  color: var(--warning-color);
+  font-size: 0.8em !important;
+}/*# sourceMappingURL=auth.css.map */
