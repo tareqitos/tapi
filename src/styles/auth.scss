@@ -48,6 +48,12 @@
     }
 }
 
+.register-login-success {
+    @include flex-row-center(space-around);
+    align-items: end;
+    gap: 10px;
+}
+
 // LOGIN FORM
 
 .form-bg {
@@ -70,4 +76,26 @@
 .fields-container-login {
     @include flex-column;
     gap: 5px;
+}
+
+// WARNING
+
+.warning-messages {
+    position: relative;
+    bottom: 50px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        bottom: 0;
+        top: 10px;
+    }
+
+    .warning {
+        color: var(--warning-color);
+        font-size: .8em !important;
+    }
 }

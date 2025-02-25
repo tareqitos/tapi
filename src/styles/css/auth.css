@@ -3,6 +3,7 @@
   --primary-color: #e67761;
   --primary-color-hover: #de573c;
   --primary-color-opacity: #e6776180;
+  --warning-color: #f91919;
 }
 
 html[data-theme=light] {
@@ -55,6 +56,14 @@ html[data-theme=dark] {
   border-radius: 5px;
 }
 
+.register-login-success {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-items: end;
+  gap: 10px;
+}
+
 .form-bg {
   position: absolute;
   top: 50%;
@@ -82,4 +91,22 @@ html[data-theme=dark] {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.warning-messages {
+  position: relative;
+  bottom: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.warning-messages.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 0;
+  top: 10px;
+}
+.warning-messages .warning {
+  color: var(--warning-color);
+  font-size: 0.8em !important;
 }/*# sourceMappingURL=auth.css.map */

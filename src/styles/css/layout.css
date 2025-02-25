@@ -3,6 +3,7 @@
   --primary-color: #e67761;
   --primary-color-hover: #de573c;
   --primary-color-opacity: #e6776180;
+  --warning-color: #f91919;
 }
 
 html[data-theme=light] {
