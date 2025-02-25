@@ -2,6 +2,7 @@
 :root {
   --primary-color: #e67761;
   --primary-color-hover: #de573c;
+  --primary-color-opacity: #e6776180;
 }
 
 html[data-theme=light] {
@@ -23,9 +24,10 @@ html[data-theme=dark] {
   background-color: var(--primary-color);
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.1s;
 }
 .button:hover {
+  transform: translateY(-3px);
   background-color: var(--primary-color-hover);
 }
 
@@ -36,5 +38,14 @@ html[data-theme=dark] {
   font-family: "Pacifico", cursive;
 }
 .title:hover {
+  color: var(--primary-color-hover);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
   color: var(--primary-color-hover);
 }/*# sourceMappingURL=components.css.map */

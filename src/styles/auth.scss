@@ -1,0 +1,73 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// REGISTER FORM
+
+.form-container {
+
+    padding: 50px 40px;
+    border-radius: $border-radius-10;
+
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 10px 40px var(--primary-color-opacity);
+    background-color: var(--background-color);
+
+    .user-form {
+        @include flex-column;
+        gap: 20px;
+        width: 200px;
+    }
+
+    h1 {
+        line-height: 1;
+    }
+
+    .fields-container {
+        @include grid;
+    }
+
+    .field {
+        @include flex-column;
+
+        label {
+            font-size: .9rem;
+        }
+
+        a {
+            font-size: .8rem;
+            text-align: right;
+            opacity: .8;
+            margin-top: 5px;
+        }
+    }
+
+    input {
+        padding: 5px;
+        border: 1px solid var(--primary-color);
+        border-radius: $border-radius-5;
+    }
+}
+
+// LOGIN FORM
+
+.form-bg {
+    @include center-position;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    cursor: unset;
+    z-index: 499;
+    background-color: var(--background-color)
+}
+
+.form-container-login {
+    @include center-position;
+    z-index: 500;
+    position: absolute;
+}
+
+.fields-container-login {
+    @include flex-column;
+    gap: 5px;
+}
