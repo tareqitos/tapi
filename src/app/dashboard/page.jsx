@@ -10,18 +10,16 @@ export default function Dashboard() {
 	const [userName, setUserName] = useState("");
 	const router = useRouter();
 
-	// useEffect(()=>{
-	//     const token=localStorage.getItem("token");
+	useEffect(()=>{
+	    const token=localStorage.getItem("accessToken");
+	    if(!token){
+	        router.push('/?login=true');
+	        return
+	    }
 
-	// // if there is no token in localstorage, then push user to login page - check this endpoint!!
-	//     if(!token){
-	//         router.push('/login');
-	//         return
-	//     }
-
-	//     const storedUserName=localStorage.getItem("userName")
-	//     setUserName(storedUserName)
-	// }, [router])
+	    const storedUserName=localStorage.getItem("userName")
+	    setUserName(storedUserName)
+	}, [router])
 
 	return (
 		<div className="dashboard-container">
