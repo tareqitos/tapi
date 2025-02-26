@@ -1,0 +1,62 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'keyframes' as *;
+
+.dashboard-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 40px;
+	width: 90vw;
+	height: 65vh;
+	justify-content: space-between;
+    overflow-y: scroll;
+    
+}
+
+.dashboard-container::-webkit-scrollbar {
+    display: none;
+}
+
+.dashboardColumn1-container,
+.dashboardColumn2-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1;
+	gap: 30px;
+    align-items: center;
+}
+
+.chart-container {
+	height: auto;
+	width: 500px;
+	margin: 0 auto;
+	canvas {
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 0 0 25px #e67761;
+		border: 2px solid #e67761;
+	}
+	@media (max-width: 600px) {
+		width: 300px;
+	}
+}
+
+.greeting {
+    display: flex;
+	font-size: 2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.masteredWords {
+    width: 80%;
+	height: auto;
+	padding: 20px;
+	background-color: #fbeae6;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+}
