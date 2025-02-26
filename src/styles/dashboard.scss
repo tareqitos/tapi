@@ -1,21 +1,19 @@
-@use 'variables' as *;
-@use 'mixins' as *;
-@use 'keyframes' as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "keyframes" as *;
 
 .dashboard-container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 40px;
 	width: 90vw;
 	height: 65vh;
-	justify-content: space-between;
-    overflow-y: scroll;
-    
+	overflow-y: scroll;
+    gap:30px
 }
 
 .dashboard-container::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 .dashboardColumn1-container,
@@ -23,18 +21,26 @@
 	display: flex;
 	flex-direction: column;
 	flex: 1 1;
-	gap: 30px;
-    align-items: center;
+	align-items: center;
+}
+
+.dashboardColumn1-container{
+    gap: 20px;
+}
+
+.dashboardColumn2-container{
+    gap: 50px;
+    justify-content: center;
 }
 
 .chart-container {
-	height: auto;
+	height: 200px;
 	width: 500px;
 	margin: 0 auto;
 	canvas {
 		background-color: #fff;
 		border-radius: 10px;
-		box-shadow: 0 0 25px #e67761;
+		box-shadow: 0 0 20px #e67761;
 		border: 2px solid #e67761;
 	}
 	@media (max-width: 600px) {
@@ -43,15 +49,15 @@
 }
 
 .greeting {
-    display: flex;
+	display: flex;
 	font-size: 2rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
 }
 
 .masteredWords {
-    width: 80%;
+	width: 80%;
 	height: auto;
 	padding: 20px;
 	background-color: #fbeae6;
@@ -60,3 +66,8 @@
 	display: flex;
 	justify-content: center;
 }
+
+.learnLanguage {
+	@include button;
+}
+

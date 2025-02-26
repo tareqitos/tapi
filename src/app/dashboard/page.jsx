@@ -31,8 +31,8 @@ export default function Dashboard() {
 				<SessionsChart />
 			</div>
 			<div className="dashboardColumn2-container">
-				<button>Learn English</button>
-				<button>Learn Polish</button>
+				<button className="learnLanguage">Learn English</button>
+				<button className="learnLanguage">Learn Polish</button>
 			</div>
 		</div>
 	);
