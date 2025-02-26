@@ -2,6 +2,8 @@
 :root {
   --primary-color: #e67761;
   --primary-color-hover: #de573c;
+  --primary-color-opacity: #e6776180;
+  --warning-color: #f91919;
 }
 
 html[data-theme=light] {
@@ -33,6 +35,18 @@ html[data-theme=dark] {
     transform: rotate(20deg);
   }
 }
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
 .homepage-container {
   display: grid;
   justify-content: center;
