@@ -25,8 +25,10 @@ export default function Login() {
 				setMessage(result.message);
 				localStorage.setItem("accessToken", result.token);
 				localStorage.setItem("userName", result.userFullname);
-				await new Promise((resolve) => setTimeout(resolve, 3000));
+				await new Promise((resolve) => setTimeout(resolve, 2000));
 				router.push("/dashboard");
+				await new Promise((resolve) => setTimeout(resolve, 200));
+				window.location.reload();
 				console.log(result.message);
 				break;
 

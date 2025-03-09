@@ -5,11 +5,13 @@ import '@/styles/home.scss'
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import Register from "@/components/register";
+import { useState } from "react";
 
 export default function Home() {
 
   const searchParams = useSearchParams();
   const register = searchParams.get('register')
+  const [hasAccess, setHasAccess] = useState(localStorage.getItem("accessToken"))
 
   return (
     <div className="homepage-container">
@@ -26,9 +28,14 @@ export default function Home() {
             <p>
               Master words and phrases with smard reviews, short daily sessions and intuitive learning anytime, anywhere.
             </p>
-            <Link href="/?register=true">
-              <button className="button lets-go">Let's go</button>
-            </Link>
+            {!hasAccess ?
+              <Link href="/?register=true">
+                <button className="button lets-go">Let's go</button>
+              </Link> :
+              <Link href="/dashboard">
+                <button className="button lets-go">My progress</button>
+              </Link>
+            }
           </>
         }
 
