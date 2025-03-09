@@ -3,12 +3,7 @@
 
 
 .dashboard-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 90vw;
-	height: 65vh;
-	overflow-y: scroll;
+	@include flex-column;
     gap:30px
 }
 
@@ -16,11 +11,9 @@
 	display: none;
 }
 
-.dashboardColumn1-container,
-.dashboardColumn2-container {
+.dashboardColumn1-container {
 	display: flex;
 	flex-direction: column;
-	flex: 1 1;
 	align-items: center;
 }
 
@@ -29,22 +22,20 @@
 }
 
 .dashboardColumn2-container{
-    gap: 50px;
-    justify-content: center;
+	@include flex-row-center;
+    gap: 20px;
 }
 
 .chart-container {
-	height: 200px;
-	width: 500px;
-	margin: 0 auto;
+	height: 300px;
+	width: 80vw;
+
 	canvas {
 		background-color: #fff;
 		border-radius: 10px;
 		box-shadow: 0 0 20px #e67761;
 		border: 2px solid #e67761;
-	}
-	@media (max-width: 600px) {
-		width: 300px;
+		padding: 20px;
 	}
 }
 
@@ -57,7 +48,7 @@
 }
 
 .masteredWords {
-	width: 80%;
+	width: 80vw;
 	height: auto;
 	padding: 20px;
 	background-color: #fbeae6;

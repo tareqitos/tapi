@@ -10,6 +10,11 @@ export default function Dashboard() {
 	const [userName, setUserName] = useState("");
 	const router = useRouter();
 
+	const handleLogout = async () => {
+		localStorage.removeItem("accessToken");
+		router.push("/")
+	}
+
 	useEffect(()=>{
 	    const token=localStorage.getItem("accessToken");
 	    if(!token){
@@ -26,11 +31,12 @@ export default function Dashboard() {
 			<h2 className="greeting">Welcome back, {userName} </h2>
 			<div className="dashboardColumn1-container">
 				<WordsMastered />
-				<SessionsChart />
-			</div>
-			<div className="dashboardColumn2-container">
+				<div className="dashboardColumn2-container">
 				<button className="learnLanguage">Learn English</button>
 				<button className="learnLanguage">Learn Polish</button>
+			</div>
+				<SessionsChart />
+			<button onClick={handleLogout} className="learnLanguage">Log out</button>
 			</div>
 		</div>
 	);
