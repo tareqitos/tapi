@@ -29,7 +29,7 @@ export default function Dashboard() {
 				<SessionsChart />
 			</div>
 			<div className="dashboardColumn2-container">
-				<button className="learnLanguage">Learn English</button>
+				<button className="learnLanguage" onClick={()=>{router.push('/challenge')}}>Learn English</button>
 				<button className="learnLanguage">Learn Polish</button>
 			</div>
 		</div>
