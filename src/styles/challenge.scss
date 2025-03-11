@@ -1,23 +1,11 @@
+@use "variables" as *;
+@use "mixins" as *;
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f7f9fc;
-    color: #333;
-    line-height: 1.6;
-  }
-  
+
   .app-container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   @include flex-row-center;
     padding: 20px;
+    animation: fade-in 0.5s;
   }
   
   .app-card {
@@ -25,7 +13,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 1000px;
     overflow: hidden;
   }
   
@@ -35,7 +23,7 @@
   }
   
   .app-title {
-    color: #4f46e5;
+    color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -55,7 +43,7 @@
   
   .fade-out {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(-10px);
   }
   
   .progress-bar {
@@ -68,7 +56,7 @@
   
   .progress-fill {
     height: 100%;
-    background-color: #4f46e5;
+    background-color: var(--secondary-color);
     border-radius: 9999px;
     transition: width 0.5s ease;
   }
@@ -80,6 +68,7 @@
   }
   
   .exercise-sentence {
+    display: inline;
     margin-top: 16px;
     margin-bottom: 24px;
     font-size: 1.125rem;
@@ -89,7 +78,6 @@
   .input-wrapper {
     position: relative;
     display: inline-block;
-    min-width: 100px;
   
     padding: 0;
     margin: 0 4px;
@@ -101,10 +89,11 @@
     font-size: 1.125rem;
     background: transparent;
     border: none;
+    border-bottom: 1px solid var(--primary-color);
     outline: none;
     padding: 0 4px;
     font-family: inherit;
-    color: #4f46e5;
+    color: var(--primary-color);
     font-weight: 500;
   }
   
@@ -129,12 +118,13 @@
   }
   
   .polish-word {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    margin-top: 40px;
   }
   
   .polish-word span {
     font-weight: bold;
-    color: #4f46e5;
+    color: var(--primary-color);
   }
   
   .answer-form {
@@ -144,7 +134,7 @@
   .action-button {
     width: 100%;
     padding: 10px;
-    background-color: #4f46e5;
+    background-color: (var(--primary-color));
     color: white;
     border: none;
     border-radius: 6px;
@@ -155,7 +145,7 @@
   }
   
   .action-button:hover {
-    background-color: #4338ca;
+    background-color: var(--primary-color-hover);
   }
   
   .action-button:focus {
@@ -182,7 +172,7 @@
   
   .final-score span {
     font-weight: bold;
-    color: #4f46e5;
+    color: var(--primary-color);
   }
   
   .feedback-message {

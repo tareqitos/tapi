@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary-color: #e67761;
+  --primary-color-hover: #de573c;
+  --primary-color-opacity: #e6776180;
+  --secondary-color: #FFE388;
+  --secondary-color-opacity: #ffe3888a;
+  --warning-color: #f91919;
+}
+
+html[data-theme=light] {
+  --text-color: #4B4B4B;
+  --background-color: #fff;
+}
+
+html[data-theme=dark] {
+  --text-color: #fff;
+  --background-color: #333;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fade-in 0.5s;
+}
+
+.app-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+.app-header {
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.app-title {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.exercise-container {
+  padding: 24px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.progress-bar {
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+.exercise-counter {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.exercise-sentence {
+  display: inline;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-size: 1.125rem;
+  color: #1f2937;
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0 4px;
+}
+
+.borderless-input {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.125rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  outline: none;
+  padding: 0 4px;
+  font-family: inherit;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.borderless-input::placeholder {
+  color: #333;
+}
+
+.correct-inline-answer {
+  display: inline-block;
+  font-weight: 600;
+  color: #10b981;
+  padding: 0 4px;
+}
+
+.incorrect-inline-answer {
+  display: inline-block;
+  font-weight: 600;
+  color: #ef4444;
+  text-decoration: line-through;
+  padding: 0 4px;
+}
+
+.polish-word {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.polish-word span {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.answer-form {
+  margin-bottom: 16px;
+}
+
+.action-button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.action-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.4);
+}
+
+.completion-container {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.completion-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.final-score {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+}
+
+.final-score span {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.feedback-message {
+  color: #4b5563;
+  margin-bottom: 24px;
+}/*# sourceMappingURL=challenge.css.map */

@@ -15,7 +15,6 @@
     .user-form {
         @include flex-column;
         gap: 20px;
-        width: 200px;
     }
 
     h1 {
@@ -23,7 +22,8 @@
     }
 
     .fields-container {
-        @include grid;
+        @include flex-column;
+        gap: 10px;
     }
 
     .field {
@@ -75,7 +75,7 @@
 
 .fields-container-login {
     @include flex-column;
-    gap: 5px;
+    gap: 10px;
 }
 
 // WARNING

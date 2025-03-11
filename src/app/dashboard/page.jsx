@@ -1,14 +1,30 @@
 "use client";
 
 import "@/styles/dashboard.scss";
+import "@/styles/home.scss";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import WordsMastered from "@/components/WordsMastered";
 import SessionsChart from "@/components/SessionsChart";
+import Mascot from "@/components/mascot";
 
 export default function Dashboard() {
 	const [userName, setUserName] = useState("");
+	const [isTransition, setIsTransition] = useState(false)
 	const router = useRouter();
+
+	const handleLogout = async () => {
+		localStorage.removeItem("accessToken");
+		await new Promise((resolve) => setTimeout(resolve, 300))
+		router.push("/")
+		window.location.reload();
+	}
+
+	const goToExercise = async () => {
+		setIsTransition(true);
+		await new Promise((resolve) => setTimeout(resolve, 300))
+		router.push('/challenge');
+	}
 
 	useEffect(()=>{
 	    const token=localStorage.getItem("accessToken");
@@ -22,15 +38,16 @@ export default function Dashboard() {
 	}, [router])
 
 	return (
-		<div className="dashboard-container">
+		<div className={`dashboard-container fade-in ${isTransition ? "fade-out" : ""}`}>
 			<h2 className="greeting">Welcome back, {userName} </h2>
 			<div className="dashboardColumn1-container">
 				<WordsMastered />
-				<SessionsChart />
+				<div className="dashboardColumn2-container">
+				<button className="learnLanguage" onClick={goToExercise}>Learn English</button>
+				<button className="learnLanguage disabled">Learn Polish</button>
 			</div>
-			<div className="dashboardColumn2-container">
-				<button className="learnLanguage">Learn English</button>
-				<button className="learnLanguage">Learn Polish</button>
+				<SessionsChart />
+			<button onClick={handleLogout} className="learnLanguage">Log out</button>
 			</div>
 		</div>
 	);

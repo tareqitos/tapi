@@ -2,6 +2,29 @@
 @use 'mixins' as *;
 @use 'animations' as *;
 
+
+.mascot-wrapper {
+    transition: transform .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &.leaving-screen {
+        transition: all 1s cubic-bezier(0.3, 0.2, 0.2, 0.715)
+    }
+
+    &:hover {
+        transform: rotate(10deg);
+    }
+
+}
+
+.mascot {
+    animation: sine 5s ease-in-out infinite;
+
+    @media screen and (max-width: 900px) {
+        width: 250px;
+        height: 250px;
+    }
+}
+
 .homepage-container {
     display: grid;
     justify-content: center;
@@ -11,21 +34,21 @@
 
     margin-top: 100px;
 
+    animation: fade-in .5s;
+
+    @media screen and (max-width: 1200px) {
+        display: flex;
+    }
+
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+        margin-top: 25px;
+    }
+
+
     .left-side {
         text-align: center;
         position: relative;
-        
-        .mascot-wrapper {
-            transition: transform .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-            &:hover {
-                transform: rotate(10deg);
-            }
-
-        }
-        .mascot {
-            animation: sine 5s ease-in-out infinite;
-        }
 
         span {
             content: '';
@@ -41,7 +64,17 @@
             right: 0;
             bottom: 20px;
             margin: auto;
-            z-index: -1
+            z-index: -1;
+
+            @media screen and (max-width: 900px) {
+                width: 200px;
+            height: 50px;
+            }
+
+
+            &.leaving-screen {
+                transition: all 1.2s cubic-bezier(0.5, 0.2, 0, 0.715)
+            }
         }
 
     }
@@ -51,12 +84,39 @@
         line-height: 1.8;
         gap: 40px;
 
-        p {
-            font-size: 1.2em;
+        @media screen and (max-width: 1200px) {
+            width: 40%;
         }
 
-        .lets-go {
+        @media screen and (max-width: 900px) {
+            width: 70%;
+        }
+
+        h1 {
+            @media screen and (max-width: 1200px) {
+                font-size: 1.5em;
+            }
+        }
+
+        h1.leaving-screen-right {
+            transition: all .8s cubic-bezier(0.3, 0.2, 0.2, 0.715)
+        }
+
+        p {
             font-size: 1.2em;
+
+            &.leaving-screen-right {
+                transition: all 1s cubic-bezier(0.4, 0.2, 0.2, 0.715)
+            }
+        }
+
+        .my-progress,
+        .lets-go {
+            font-size: 1.1em;
+
+            &.leaving-screen-right {
+                transition: all 1.2s cubic-bezier(0.5, 0.2, 0.2, 0.715)
+            }
         }
     }
 }

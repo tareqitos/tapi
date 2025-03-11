@@ -3,6 +3,8 @@
   --primary-color: #e67761;
   --primary-color-hover: #de573c;
   --primary-color-opacity: #e6776180;
+  --secondary-color: #FFE388;
+  --secondary-color-opacity: #ffe3888a;
   --warning-color: #f91919;
 }
 
@@ -27,15 +29,14 @@ html[data-theme=dark] {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 200px;
 }
 .form-container h1 {
   line-height: 1;
 }
 .form-container .fields-container {
-  display: grid;
-  grid-template-columns: repeat(2, 0.4fr);
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .form-container .field {
   display: flex;
@@ -90,7 +91,7 @@ html[data-theme=dark] {
 .fields-container-login {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .warning-messages {
