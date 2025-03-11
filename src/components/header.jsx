@@ -11,10 +11,17 @@ export default function Header() {
     const searchParams = useSearchParams();
     const login = searchParams.get('login')
 
-    useEffect(() => {
-        setHasAccess(localStorage.getItem("accessToken"));
+    const checkIfLoggedIn = () => {
+        const token = localStorage.getItem("accessToken");
+        if (!token) return console.log("Token not found");
+
+        setHasAccess(true);
         console.log(hasAccess)
-    }, [setHasAccess])
+    }
+
+    useEffect(() => {
+        checkIfLoggedIn();
+    }, []);
 
     return (
         <header>
