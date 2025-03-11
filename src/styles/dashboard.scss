@@ -4,7 +4,8 @@
 
 .dashboard-container {
 	@include flex-column;
-    gap:30px
+    gap:30px;
+	animation: fade-in .5s;
 }
 
 .dashboard-container::-webkit-scrollbar {
@@ -33,7 +34,6 @@
 	canvas {
 		background-color: #fff;
 		border-radius: 10px;
-		box-shadow: 0 0 20px #e67761;
 		border: 2px solid #e67761;
 		padding: 20px;
 	}
@@ -51,7 +51,7 @@
 	width: 80vw;
 	height: auto;
 	padding: 20px;
-	background-color: #fbeae6;
+	background-color: var(--secondary-color-opacity);
 	border-radius: 10px;
 	margin-bottom: 30px;
 	display: flex;
@@ -60,5 +60,14 @@
 
 .learnLanguage {
 	@include button;
+}
+
+.learnLanguage.disabled {
+	background: rgba(128, 128, 128, 0.51);
+	cursor:default;
+	&:hover {
+		background: rgba(128, 128, 128, 0.51);
+		transform: none;
+	}
 }
 

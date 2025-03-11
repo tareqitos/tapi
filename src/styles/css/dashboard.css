@@ -3,6 +3,8 @@
   --primary-color: #e67761;
   --primary-color-hover: #de573c;
   --primary-color-opacity: #e6776180;
+  --secondary-color: #FFE388;
+  --secondary-color-opacity: #ffe3888a;
   --warning-color: #f91919;
 }
 
@@ -20,6 +22,7 @@ html[data-theme=dark] {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  animation: fade-in 0.5s;
 }
 
 .dashboard-container::-webkit-scrollbar {
@@ -50,7 +53,6 @@ html[data-theme=dark] {
 .chart-container canvas {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 20px #e67761;
   border: 2px solid #e67761;
   padding: 20px;
 }
@@ -67,7 +69,7 @@ html[data-theme=dark] {
   width: 80vw;
   height: auto;
   padding: 20px;
-  background-color: #fbeae6;
+  background-color: var(--secondary-color-opacity);
   border-radius: 10px;
   margin-bottom: 30px;
   display: flex;
@@ -88,4 +90,13 @@ html[data-theme=dark] {
 .learnLanguage:hover {
   transform: translateY(-3px);
   background-color: var(--primary-color-hover);
+}
+
+.learnLanguage.disabled {
+  background: rgba(128, 128, 128, 0.51);
+  cursor: default;
+}
+.learnLanguage.disabled:hover {
+  background: rgba(128, 128, 128, 0.51);
+  transform: none;
 }/*# sourceMappingURL=dashboard.css.map */
